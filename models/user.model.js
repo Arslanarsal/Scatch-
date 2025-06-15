@@ -11,9 +11,9 @@ const userScheme = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
-    Password: {
+    password: {
         type: String,
         required: true,
     },
@@ -21,10 +21,7 @@ const userScheme = mongoose.Schema({
         type: Array,
         default: [],
     },
-    isAdmin: {
-        type: Boolean,
-        default: false
-    },
+   
     orders: {
         type: Array,
         default: [],
@@ -32,7 +29,7 @@ const userScheme = mongoose.Schema({
     contact: {
         type: Number,
         required: true,
-        unique: true
+        // unique: true
     },
     Picture: {
         type: String,
