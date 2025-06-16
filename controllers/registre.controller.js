@@ -42,19 +42,23 @@ const loginController = async function (req, res) {
         if (!user) {
             return res.status(400).send("Email or password incorrect")
         }
-        console.log(user);
 
-        await bcrypt.compare(password, user.password, function (err, result) {
+         bcrypt.compare(password, user.password, function (err, result) {
             if (err) {
                 res.send("Error to generate password")
             }
             const token = jwt.sign({email: email , id : user._id} , process.env.JWT_TOKEN)
             res.cookie("token" , token);
-            return res.send("You can login");
+            return res.redirect("/product/shop");
         })
     } catch (error) {
         res.send(error.message)
     }
 }
 
-module.exports = { usercontroller, loginController };
+const logout = async function (req , res) {
+    req.cookies("token" , "");
+    return res.redirect("/user/login")
+}
+
+module.exports = { usercontroller, loginController , logout };

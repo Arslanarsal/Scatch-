@@ -36,6 +36,5 @@ router.post("/create", async function (req, res) {
 });
 
 
-// console.log(process.env.NODE_ENV)
 
 module.exports = router
