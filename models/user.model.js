@@ -11,7 +11,6 @@ const userScheme = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        // unique: true
     },
     password: {
         type: String,
@@ -21,7 +20,7 @@ const userScheme = mongoose.Schema({
         type: Array,
         default: [],
     },
-   
+
     orders: {
         type: Array,
         default: [],
@@ -29,13 +28,11 @@ const userScheme = mongoose.Schema({
     contact: {
         type: Number,
         required: true,
-        // unique: true
     },
     Picture: {
         type: String,
 
     }
-
 })
 
 
