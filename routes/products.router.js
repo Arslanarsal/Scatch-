@@ -6,8 +6,5 @@ router.get('/', function (req, res) {
     res.send("every thing is fine in product");
 })
 
-router.get("/shop", isLoggedIn, function (req, res) {
-    res.render("cart");
-})
 
 module.exports = router

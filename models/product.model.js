@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const productScheme = mongoose.Schema({
+    image: {
+        type: Buffer
+    },
     fullName: {
         type: String,
         required: true,
@@ -12,7 +15,7 @@ const productScheme = mongoose.Schema({
     },
     discount: {
         type: Number,
-        default : 0,
+        default: 0,
     },
     bgColor: {
         type: String,
@@ -26,12 +29,7 @@ const productScheme = mongoose.Schema({
         type: String,
         default: "Gray",
     },
-    image: {
-        type: String,
-        required: true,
-    }
-
-
+   
 })
 
 

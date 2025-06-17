@@ -9,7 +9,7 @@ const isLoggedIn = async function (req, res, next) {
     }
 
     try {
-        let data =  jwt.verify(token, process.env.JWT_TOKEN)
+        let data = jwt.verify(token, process.env.JWT_TOKEN)
 
         let user = await userModel.findOne({ email: data.email }).select("-password")
         req.user = user;
@@ -19,4 +19,4 @@ const isLoggedIn = async function (req, res, next) {
     }
 }
 
-module.exports = {isLoggedIn}
+module.exports = { isLoggedIn }
